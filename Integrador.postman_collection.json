@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "48f407b6-de01-472e-acbc-a0938e3ac94b",
+		"name": "Integrador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32590554"
+	},
+	"item": [
+		{
+			"name": "Nuevo cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_cliente\": 3,\r\n    \"nombre\":\"Morko\",\r\n    \"apellido\":\"Luca\",\r\n    \"dni\":\"43678987\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"crear"
+					],
+					"query": [
+						{
+							"key": "id_cliente",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "nombre",
+							"value": "Tomas",
+							"disabled": true
+						},
+						{
+							"key": "apellido",
+							"value": "Gomez",
+							"disabled": true
+						},
+						{
+							"key": "dni",
+							"value": "42025089",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_producto\":4,\r\n    \"nombre\":\"Mantel\",\r\n    \"marca\":\"MAnteles Srl\",\r\n    \"costo\":5000,\r\n    \"cantidad_disponible\":8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/productos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nueva Venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_venta\":2,\r\n    \"fecha_venta\":\"2024-04-13\",\r\n    \"total\":\"20000\",\r\n    \"listaProductos\": [{\r\n        \"codigo_producto\":3\r\n    },\r\n    {\r\n       \"codigo_producto\":4\r\n    }],\r\n    \"unCliente\":{\r\n        \"id_cliente\":2\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ventas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar total de ventas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Falta Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/producto/falta_stock",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"falta_stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar los productos de una venta deteterminada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/productos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar las venta por fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/fechaHoy?fecha_venta=2024-04-13",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"fechaHoy"
+					],
+					"query": [
+						{
+							"key": "fecha_venta",
+							"value": "2024-04-13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mayor venta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/mayorVenta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"mayorVenta"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
